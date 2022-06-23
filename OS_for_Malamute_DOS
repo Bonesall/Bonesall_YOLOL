@@ -1,10 +1,5 @@
-i=0
-:TotalRods=:Rod1+:Rod2+:Rod3+:Rod4 :GURL=:MinEPS+(10000-:Battery)/75
-:TotalPower=(:Generator1+:Generator2)*100
-:Heatsinks=:HS1+:HS2+:HS3+:HS4 i++ if i>5 then goto5 end goto2
-
-
-
-
-
-goto1
+ABS=(LLS+LRS+BRS+BLS+TCS)/5 if ABS<1000 then Break=100 Cruise=5 end
+if ABS==1000 then Break=0 Cruise=5 end i++ if i>3 then goto3 end goto1  // ABS = Autobreaking System
+:TotalRods=:Rod1+:Rod2+:Rod3+:Rod4 :mA0=(:Front+:Left+:Right)/3
+a=:MinEPS b=:GURL :GURL=a+(10000-:Battery)/75 :MinEPS/GURL=a+"/"+b
+:Heatsinks=:HS1+:HS2+:HS3+:HS4 :TotalPower=(:Gen1+:Gen2)*100 i=0 goto1
