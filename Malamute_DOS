@@ -1,0 +1,10 @@
+i=0
+:TotalRods=:Rod1+:Rod2+:Rod3+:Rod4 :GURL=:MinEPS+(10000-:Battery)/75
+:TotalPower=(:Generator1+:Generator2)*100
+:Heatsinks=:HS1+:HS2+:HS3+:HS4 i++ if i>5 then goto5 end goto2
+
+
+
+
+
+goto1
